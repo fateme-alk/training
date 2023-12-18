@@ -16,3 +16,7 @@ def contact(request):
 
 def classes(request):
     return render(request, "training/classes.html")
+
+
+def blog(request):
+    return render(request, "training/blog.html")
