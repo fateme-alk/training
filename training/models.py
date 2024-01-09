@@ -25,3 +25,15 @@ class Trainer(models.Model):
             return f"{first_name} {last_name}"
         else:
             return self.user.username.title()
+
+
+class Participant(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        first_name = self.user.first_name.title()
+        last_name = self.user.last_name.title()
+        if first_name and last_name:
+            return f"{first_name} {last_name}"
+        else:
+            return self.user.username.title()
